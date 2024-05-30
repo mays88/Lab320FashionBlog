@@ -1,35 +1,25 @@
 import styled from "styled-components";
 
 const NavLinks = styled.ul`
-    color: gray;
+    color: lightgray;
     display: flex;
     justify-content: space-between;
     font-size: 2.5em;
     text-decoration: underline;
     list-style: none;
+    margin: 50px 0;
 `;
 
-function Navbar() {
+function Navbar({ links }) {
     return (
         <NavLinks>
-            <li>
-                <a>Women&apos;s</a>
-            </li>
-            <li>
-                <a>Men&apos;s</a>
-            </li>
-            <li>
-                <a>On the Street</a>
-            </li>
-            <li>
-                <a>The Catwalk</a>
-            </li>
-            <li>
-                <a>AdWatch</a>
-            </li>
-            <li>
-                <a>About</a>
-            </li>
+            {links.map((link) => {
+                return (
+                    <li key={link.id}>
+                        <a>{link.title}</a>
+                    </li>
+                );
+            })}
         </NavLinks>
     );
 }

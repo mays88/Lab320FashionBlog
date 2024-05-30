@@ -1,48 +1,27 @@
 import styled from "styled-components";
+import Navbar from "../Navbar/Navbar";
 
-const NavLinks = styled.ul`
-    color: red;
-    display: flex;
-    justify-content: space-between;
-    font-size: 2.5em;
-    list-style: none;
-    padding-top: 2em;
-`;
 const FooterCC = styled.p`
-    color: gray;
+    color: lightgray;
     font-size: 2em;
     padding-top: 1em;
 `;
 
+const navLinks = [
+    { id: 1, title: "Home" },
+    { id: 2, title: "Women's" },
+    { id: 3, title: "Men's" },
+    { id: 4, title: "On the Street" },
+    { id: 5, title: "The Catwalk" },
+    { id: 6, title: "Adwatch" },
+    { id: 7, title: "About" },
+    { id: 8, title: "Tips" },
+];
+
 function Footer() {
     return (
         <>
-            <NavLinks>
-                <li>
-                    <a>Home</a>
-                </li>
-                <li>
-                    <a>Women&apos;s</a>
-                </li>
-                <li>
-                    <a>Men&apos;s</a>
-                </li>
-                <li>
-                    <a>On the Street</a>
-                </li>
-                <li>
-                    <a>The Catwalk</a>
-                </li>
-                <li>
-                    <a>AdWatch</a>
-                </li>
-                <li>
-                    <a>About</a>
-                </li>
-                <li>
-                    <a>Tips</a>
-                </li>
-            </NavLinks>
+            <Navbar links={navLinks} />
             <FooterCC>&copy; 2013 Valet Industries, Inc</FooterCC>
         </>
     );
